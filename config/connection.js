@@ -1,3 +1,7 @@
-const express = require('express');
-const db = require('./config/connection');
-const routes = require('./routes');
+const { connect, connection } = require('mongoose');
+
+const connectionString = 'mongodb://127.0.0.1:27017/';
+
+connect(connectionString);
+
+module.exports = connection;
