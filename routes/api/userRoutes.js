@@ -5,10 +5,8 @@ const {
   createUser,
   updateUser,
   deleteUser,
-  addReaction,
-  removeReaction,
   addFriend,
-  deleteFriend,
+  removeFriend,
 } = require('../../controllers/userController');
 
 
@@ -18,13 +16,7 @@ router.route('/').get(getUsers).post(createUser);
 // route to retrieve a single user and update or delete them
 router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);
 
-// route to add reaction
-router.route('/:userId/reactions').post(addReaction);
-
-// route to delete reactions
-router.route('/:userId/reactions/:reactionId').delete(removeReaction);
-
 // route to add or remove friends
-router.route('/:userId/friends/:friendId').post(addFriend).delete(deleteFriend);
+router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend);
 
 module.exports = router;

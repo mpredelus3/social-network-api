@@ -56,6 +56,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
+
   // Add a friend to a user's friend list
   addFriend(req, res) {
     User.findOneAndUpdate(
